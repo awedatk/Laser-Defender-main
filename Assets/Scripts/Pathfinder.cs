@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour
 {
     EnemySpawner enemySpawner;
-    WaveConfigSO waveConfig;
+    [SerializeField]  WaveConfigSO waveConfig;
     List<Transform> waypoints;
     int waypointIndex = 0;
 
@@ -23,6 +23,7 @@ public class Pathfinder : MonoBehaviour
 
     void Update()
     {
+       //Debug.Log(waypoints.Count);
         FollowPath();
     }
 
@@ -36,6 +37,7 @@ public class Pathfinder : MonoBehaviour
             if(transform.position == targetPosition)
             {
                 waypointIndex++;
+               // Debug.Log(waypointIndex);
             }
         }
         else
